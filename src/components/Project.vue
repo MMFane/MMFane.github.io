@@ -1,5 +1,9 @@
 <template>
-  <section class="project" :style="{ backgroundImage: `url(${img})` }">
+  <section
+    class="project"
+    :style="{ backgroundImage: `url(${img})` }"
+    @click="changeProject"
+  >
     <p class="title">{{ name }}</p>
   </section>
 </template>
@@ -7,6 +11,11 @@
 <script>
 export default {
   name: "Project",
+  methods: {
+    changeProject() {
+      this.$emit("changeProject", this.name);
+    },
+  },
   props: {
     name: {
       type: String,

@@ -3,7 +3,11 @@
     <h1 id="title">Projects</h1>
     <ul id="projects">
       <li v-for="project in projects">
-        <Project :name="project.name" :img="project.img" />
+        <Project
+          :name="project.name"
+          :img="project.img"
+          @changeProject="changeProject"
+        />
       </li>
     </ul>
   </section>
@@ -22,6 +26,11 @@ export default {
     return {
       projects: Projects,
     };
+  },
+  methods: {
+    changeProject(name) {
+      console.log(`Home Changing Project to ${name}`);
+    },
   },
 };
 </script>

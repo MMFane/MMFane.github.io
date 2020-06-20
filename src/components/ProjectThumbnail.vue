@@ -4,7 +4,7 @@
     :style="{ backgroundImage: `url(${img})` }"
     @click="changeProject"
   >
-    <p class="title">{{ name }}</p>
+    <h2 class="title">{{ name }}</h2>
   </section>
 </template>
 

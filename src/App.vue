@@ -1,9 +1,9 @@
 <template>
-  <section id="app">
+  <main id="app">
     <Nav />
     <router-view />
     <Footer />
-  </section>
+  </main>
 </template>
 
 <script>

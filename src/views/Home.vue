@@ -47,5 +47,6 @@ ul {
 #projects {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 </style>

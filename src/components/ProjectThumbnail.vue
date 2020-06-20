@@ -10,21 +10,25 @@
 
 <script>
 export default {
-  name: "Project",
+  name: "ProjectThumb",
   methods: {
     changeProject() {
-      this.$emit("changeProject", this.name);
+      this.$emit("changeProject", this.id);
     },
   },
   props: {
-    name: {
-      type: String,
-      default: "Project",
+    id: {
+      type: Number,
+      required: true,
     },
     img: {
       type: String,
       default:
         "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80",
+    },
+    name: {
+      type: String,
+      default: "Project",
     },
   },
 };

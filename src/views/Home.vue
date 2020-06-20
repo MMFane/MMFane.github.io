@@ -1,35 +1,45 @@
 <template>
   <section id="router-view">
     <h1 id="title">Projects</h1>
-    <ul id="projects">
-      <li v-for="project in projects">
-        <Project
-          :name="project.name"
+    <ul id="thumbnails" v-if="selectedProject === null">
+      <li v-for="(project, index) in projects" :key="index">
+        <ProjectThumb
+          :id="index"
           :img="project.img"
+          :name="project.name"
           @changeProject="changeProject"
         />
       </li>
     </ul>
+    <article id="project" v-else>
+      <button @click="clearSelected">Back</button>
+      This is Project {{ projects[selectedProject].name }}
+    </article>
   </section>
 </template>
 
 <script>
-import Project from "@/components/Project.vue";
+import ProjectThumb from "@/components/ProjectThumbnail.vue";
 import Projects from "@/assets/projects.json";
 
 export default {
   name: "Home",
   components: {
-    Project,
+    ProjectThumb,
   },
   data() {
     return {
       projects: Projects,
+      selectedProject: null,
     };
   },
   methods: {
-    changeProject(name) {
-      console.log(`Home Changing Project to ${name}`);
+    changeProject(id) {
+      console.log(`Home Changing Project to ${id}`);
+      this.selectedProject = id;
+    },
+    clearSelected() {
+      this.selectedProject = null;
     },
   },
 };
@@ -44,9 +54,15 @@ ul {
   align-self: center;
 }
 
-#projects {
+#thumbnails {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+#project {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 </style>

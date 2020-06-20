@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["resume"],{"1ba2":function(e,t,n){"use strict";n.r(t);var r=function(){var e=this,t=e.$createElement;e._self._c;return e._m(0)},s=[function(){var e=this,t=e.$createElement,n=e._self._c||t;return n("section",{attrs:{id:"router-view"}},[n("h1",[e._v("This is a resume page")])])}],u=n("2877"),a={},i=Object(u["a"])(a,r,s,!1,null,null,null);t["default"]=i.exports}}]);
+//# sourceMappingURL=resume.10262b63.js.map

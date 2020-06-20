@@ -1,7 +1,7 @@
 <template>
   <main id="app">
     <Nav />
-    <router-view />
+    <router-view id="main-content" />
     <Footer />
   </main>
 </template>
@@ -30,13 +30,13 @@ export default {
   font-family: Roboto, Arial, sans-serif;
 }
 
-#router-view {
+#main-content {
   margin: 1rem 0;
   padding: 1rem;
   border: 1px solid black;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  align-content: center;
+  align-items: center;
 }
 </style>

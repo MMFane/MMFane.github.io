@@ -20,5 +20,6 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: 1rem 2rem 0 2rem;
 }
 </style>

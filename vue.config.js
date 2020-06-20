@@ -1,3 +1,3 @@
 module.exports = {
-  publicPath: "/portfolio-git/",
+  publicPath: "/MMFane.github.io/",
 };

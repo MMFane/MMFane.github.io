@@ -27,6 +27,7 @@ export default {
   flex-direction: column;
   justify-content: space-between;
   align-content: center;
+  font-family: Roboto, Arial, sans-serif;
 }
 
 #router-view {
@@ -34,5 +35,8 @@ export default {
   padding: 1rem;
   border: 1px solid black;
   flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
 }
 </style>

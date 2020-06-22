@@ -1,20 +1,22 @@
 <template>
   <section id="router-view">
     <h1 id="title">Projects</h1>
-    <ul id="thumbnails" v-if="selectedProject === null">
-      <li v-for="(project, index) in projects" :key="index">
-        <ProjectThumb
-          :id="index"
+    <transition name="fade" mode="out-in">
+      <ul id="thumbnails" v-if="!projectSelected" key="thumnail-list">
+        <li v-for="(project, index) in projects" :key="index">
+          <ProjectThumb
+            :id="index"
           :img="project.img"
           :name="project.name"
           @changeProject="changeProject"
-        />
-      </li>
-    </ul>
-    <article id="project" v-else>
-      <button @click="clearSelected">Back</button>
-      This is Project {{ projects[selectedProject].name }}
-    </article>
+          />
+        </li>
+      </ul>
+      <article id="project" v-else key="project-view">
+        <button @click="clearSelected">Back</button>
+        This is Project {{ projects[selectedProject].name }}
+      </article>
+    </transition>
   </section>
 </template>
 
@@ -26,6 +28,11 @@ export default {
   name: "Home",
   components: {
     ProjectThumb,
+  },
+  computed: {
+    projectSelected() {
+      return this.selectedProject !== null;
+    },
   },
   data() {
     return {
@@ -64,5 +71,20 @@ ul {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+  height: 500px;
+  color: white;
+  background-color: purple;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.3s ease;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+  transform: translateY(100%);
 }
 </style>
